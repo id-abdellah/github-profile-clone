@@ -1,0 +1,90 @@
+.left-sidebar {
+    position: sticky;
+    height: fit-content;
+    top: 10px;
+    .pic {
+        // width: 180px;
+        border-radius: 10px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    .name {
+        margin: 15px 0;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .bio {
+        margin: 18px 0;
+        font-size: 14px;
+    }
+
+    .github-profile {
+        a {
+            background-color: var(--bg-secondary);
+            padding: 10px;
+            border-radius: 6px;
+            color: var(--txt-blue);
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+            transition: .3s;
+            cursor: pointer;
+
+            &:hover {
+                filter: brightness(90%);
+                color: var(--searche-icon-bg);
+            }
+        }
+    }
+
+    .infos {
+        margin: 15px 0;
+
+        > div {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 14px;
+            span:first-child {
+                width: 25px;
+                height: 25px;
+                // background-color: red;
+                display: grid;
+                place-content: center;
+            }
+        }
+
+        a {
+            color: var(--txt-blue);
+            transition: .3s;
+
+            &:hover {
+                color: var(--searche-icon-bg);
+            }
+        }
+    }
+
+    .stats {
+        > div {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            span:first-child {
+                min-width: 20px;
+                font-weight: 500;
+            }
+
+            span:last-child {
+                color: var(--txt-grey);
+                font-weight: 600;
+                font-size: 14px;
+            }
+        }
+    }
+}

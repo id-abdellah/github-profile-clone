@@ -1,0 +1,46 @@
+.followers-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+
+    .follower-card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: var(--bg-third);
+        padding: 15px;
+        border-radius: 8px;
+
+        .follower-infos {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            .follower_pic {
+                width: 50px;
+                overflow: hidden;
+                border-radius: 50%;
+            }
+
+            .follower_username {
+                font-weight: 400;
+            }
+        }
+
+        button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            color: white;
+            background-color: var(--bg-secondary);
+            transition: .3s;
+
+            &:hover {
+                filter: brightness(120%);
+            }
+        }
+    }
+}

@@ -1,0 +1,83 @@
+.repos-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10px;
+
+    .repo-card {
+        color: white;
+        border-radius: 8px;
+        overflow: hidden;
+        display: grid;    
+        grid-template-rows: subgrid;
+        grid-row: span 2;
+        gap: 0;
+
+        &:hover .row:first-child .sub-row:nth-child(1) .repo_name {
+            color: var(--searche-icon-bg);
+        }
+
+        .row:first-child {
+            padding: 18px;
+            background-color: var(--bg-third);
+            position: relative;
+
+            .sub-row:nth-child(1) {
+                display: flex;
+                justify-content: space-between;
+                
+                .repo_name {
+                    font-size: 16px;
+                    font-weight: 600;
+                    transition: .3s;
+                }
+
+                .vis {
+                    display: block;
+                    color: grey;
+                    position: absolute;
+                    top: 8px;
+                    right: 8px;
+                    font-size: 12px;
+                    font-variant-caps: all-small-caps;
+                }
+            }
+
+            .sub-row:nth-child(2) {
+                margin-top: 10px;
+                p {
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    -webkit-line-clamp: 2;
+                    color: var(--txt-grey2);
+                    word-break: break-all;
+                }
+            }
+        }
+            
+        .row:last-child {
+            padding: 18px;
+            background-color: var(--bg-secondary);
+
+            ul.repo-stats {
+                display: flex;
+                gap: 20px;
+                align-items: center;
+                color: var(--grey);
+
+
+
+                li span:nth-child(1) {
+                    font-size: 14px;
+                }
+
+                li span:nth-child(2) {
+                    font-size: 12px;
+                    font-weight: 500;
+                    margin-left: 8px;
+                }
+            }
+        }
+    }
+}
