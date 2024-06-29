@@ -29,6 +29,7 @@ export default function Repos() {
 
     return (
         <>
+            <h1>hello bruh</h1>
             <div className="repos-content">
                 {
                     !isLoading
