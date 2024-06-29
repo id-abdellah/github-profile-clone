@@ -5,6 +5,18 @@
   margin: 0;
 }
 
+:root {
+  --bg-secondary: #1f2a45;
+  --bg-third: #19263d;
+  --body-bg: #131d2d;
+  --searche-icon-bg: #1f7afb;
+  --txt-blue: #39639e;
+  --txt: #fff;
+  --grey: grey;
+  --txt-grey: #38404d;
+  --txt-grey2: #4b4f55;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -39,17 +51,6 @@ ul {
   list-style: none;
 }
 
-.theme-dark {
-  --bg-secondary: #1f2a45;
-  --bg-third: #19263d;
-  --body-bg: #131d2d;
-  --searche-icon-bg: #1f7afb;
-  --txt-blue: #39639e;
-  --txt: #fff;
-  --grey: grey;
-  --txt-grey: #38404d;
-  --txt-grey2: #4b4f55;
-}
 
 /****** 
   Responsive container
