@@ -1,9 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faSun } from "@fortawesome/free-regular-svg-icons"
+import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons"
 import "./sass/_Navbar.scss"
 import { faSearch } from "@fortawesome/free-solid-svg-icons"
 import { useContext, useEffect, useState } from "react";
 import { UsernameContext } from "../features/context";
+import { themeToggle, getCurrentTheme } from "../features/theme";
 
 export default function Navbar() {
     const {
@@ -31,6 +32,25 @@ export default function Navbar() {
 
     const [input, setInput] = useState("");
 
+    const [currentTheme, setCurrentTheme] = useState(getCurrentTheme());
+
+    // i took this code from chatGPT, it was very useful to listens to any change on theme attribut
+    useEffect(() => {
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.type === 'attributes' && mutation.attributeName === 'theme') {
+                    setCurrentTheme(getCurrentTheme());
+                }
+            });
+        });
+
+        observer.observe(document.body, { attributes: true });
+
+        return () => {
+            observer.disconnect();
+        };
+    }, []);
+
     return (
         <nav className="navbar">
 
@@ -50,6 +70,14 @@ export default function Navbar() {
                         updateActiveLi("repos")
                     }}>
                         <FontAwesomeIcon icon={faSearch} /> Searche
+                    </div>
+                </div>
+                <div className="theme-controller" onClick={() => themeToggle()}>
+                    <div className="light-theme" style={{ display: `${currentTheme === "light" ? "none" : "block"}` }}>
+                        <FontAwesomeIcon icon={faSun} />
+                    </div>
+                    <div className="dark-theme" style={{ display: `${currentTheme === "light" ? "block" : "none"}` }}>
+                        <FontAwesomeIcon icon={faMoon} />
                     </div>
                 </div>
             </div>

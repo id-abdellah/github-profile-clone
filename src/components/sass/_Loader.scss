@@ -6,7 +6,7 @@
 
     .box-repos {
         border-radius: 8px;
-        background-color: #202a3a;
+        background-color: var(--bg-secondary);
         padding: 20px;
 
         span {
@@ -53,7 +53,7 @@
 
     .box-followers {
         padding: 20px;
-        background-color: #202a3a;
+        background-color: var(--bg-secondary);
         border-radius: 8px;
 
         display: flex;
