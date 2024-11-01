@@ -77,7 +77,8 @@ export default function LeftSidebar() {
                             {
                                 data.blog &&
                                 <div className="blog">
-                                    <span><FontAwesomeIcon icon={faGlobe} /></span> <a href={data.blog} target="_blank">{data.blog}</a>
+                                    <span><FontAwesomeIcon icon={faGlobe} /></span>
+                                    <a href={"https://" + data.blog} target="_blank">{data.blog}</a>
                                 </div>
                             }
                             {
